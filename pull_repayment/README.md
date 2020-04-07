@@ -23,12 +23,12 @@ order_no|  订单编号|  String|  Y| 订单编号
 ###4.2 响应说明
 ####4.1.1 参数定义
 参数|  名称 | 值类型| 是否必填|  备注
------------ | ------------- | ------------
+----------- | ------------- | ------------ | ------------ | ------------ 
 user_id| 第三方机构借款用户ID|  String|  Y|
 order_no|  订单编号|  String|  Y| 
 open_bank| 银行名称|  String | Y| 还款银行名，中文名，不要传代码，会展示给用户
 bank_card| 银行卡号|  String|  Y| 还款银行卡号（完整卡号）
-repayment_plan|  还款计划 | Array|（JSON）| Y 
+repayment_plan|  还款计划 | Array|Y| （JSONARRAY） 
 can_prepay|  是否支持提前全部结清|  Integer| N| 仅多期产品需回传，1=支持；0=不支持。
 can_prepay_time |可提前全部结清的开始时间 | Timestamp |N| 当支持提前全部结清时需回传。十位时间戳
 

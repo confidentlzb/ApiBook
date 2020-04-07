@@ -35,7 +35,7 @@
 ##5. 接口定义
 http://openapi.dev.lattebank.com/xxxchannel/confirm/repay?r_c=XXX(渠道代码大写)
 
-参数|  名称|  值类型| 是否可空 | 备注
+参数|  名称|  值类型| 是否必填 | 备注
 ----------- | ------------- | ------------
 order_no|  订单编号|  String|  Y| /
 period_nos|  还款期数|  String|  Y |期数：1,2,3...all。all表示所有期。

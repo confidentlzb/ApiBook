@@ -20,7 +20,7 @@ idcard_info |身份信息|  object(JSON)|  N| 身份证、活体识别
 
 **身份信息(idcard_info)**
 
-参数|  名称|  值类型| 是否可空 | 备注
+参数|  名称|  值类型| 是否必填 | 备注
 ---------- | ------------- | ------------
 assay_type|  活体来源 | string|  Y |目前仅支持face++
 delta |face++| 上传数据的校验字符串的base64值的下载地址|  string | N| 在配合MegLive SDK使用时，用于校验上传数据的校验字符串，此字符串会由MegLive SDK直接返回

@@ -26,9 +26,11 @@ user_base_info | 用户基本信息| Objet|Y|
 identification_info|身份证信息|Object|Y|
 face_info|人脸信息|Object|Y|
 contact_info|通话记录信息|Object|Y|
-credict_card_info|信用卡信息|Object|N|
+credict_card_info|信用卡信息|Object|Y|
 location_info|定位信息|Object|Y|
-device_info|设备信息|Object|N|
+device_info|设备信息|Object|Y|
+third_info|第三方信息|String|N|芝麻信用数据（只给芝麻分）
+other|其他|String|N|申请流程每步操作时长
 
 **用户基本信息**
 
@@ -42,11 +44,14 @@ education_enum|	用户学历|String|Y|初中及以下,中专,高中，大专，�
 email|	邮箱|String|Y|
 marriage_enum|	婚姻状况|String|Y|已婚，未婚，其他
 company_name|	公司名称|String|Y|
-company_address|	公司地址|String|Y|
+company_telephone|	公司电话|String|N|
+company_address|	公司地址|String|N|
+education_enum|	学历|String|Y|
 residence_address|家庭住址|String|Y|
-graduation_years|	毕业年限|Integer|N|不需要传递
+graduation_years|	毕业年限|Integer|N|
+email|邮箱|String|Y|
 birth_day|	生日|String|Y|YYYYMMDD
-
+income_information|收入信息|String|Y|
 
 
 **身份证信息**
@@ -65,70 +70,68 @@ idcard_back|	身份证-反面照片|String|Y|图片的base64
 **人脸信息**
 
 参数|	名称|	值类型|	是否必填|	备注
------------- | ------------- | ------------
-identify_score|	人脸识别-识别分数|Integer|N|
-identify_result|	识别结果|String|N|
-hack_score|	HACK评分|String|N|
-face_vdeo|	人脸识别视频|String|N|
-faceid_score|	人脸和身份证照片比对分数|String|N|
-liveness_data|	人脸识别-原始数据|String|N|
+------------ | ------------- | ------------ | ------------ | ------------ 
+identify_score|	人脸识别-识别分数|Integer|Y|
+identify_result|	识别结果|String|Y|
+hack_score|	HACK评分|String|Y|
 face_photo|	人脸识别照片|String|Y|图片的base64数据
-supplier|	人脸识别运营商|String|N|
-
 **通话记录信息**
 
 参数|	名称|	值类型|	是否必填|	备注
------------- | ------------- | ------------
+------------ | ------------- | ------------ | ------------ | ------------ 
 close_mobile|	亲密联系人电话|String|Y|
 close_name|	亲密联系人姓名|String|Y|
 common_mobile|一般联系人电话|String|Y|
 common_name|	一般联系人姓名|String|Y|
+contact_cnt|	通讯录个数|Integer|Y|
 other_contact_list|其他联系人信息列表|List|N|保存name,mobile
 user_contact_list|用户通讯录信息|List|N|保存name,mobile
 operator|运营商数据|Object|N|直接传递运营商原始数据由还呗解析
 supplier|	通话报告运营商|String|N|具体的运营商名称
+short_message| 短信内容 |String|N|短信记录明细
 
 **信用卡信息**
 
 参数|	名称|	值类型|	是否必填|	备注
------------- | ------------- | ------------
-card_no	|卡号|String|N|
-bank_name|	银行名称|String|N|
-repayment_day|	还款日期|String|N|
-limit|	额度|String|N|
-card_pic|	卡照片|String|N|
+------------ | ------------- | ------------ | ------------ | ------------ 
+card_no	|卡号|String|Y|
+repayment_day|	还款日期|String|Y|
+limit|	额度|String|Y|
 
 **定位信息**
 
 参数|	名称|	值类型|	是否必填|	备注
------------- | ------------- | ------------
+------------ | ------------- | ------------ | ------------ | ------------ 
 meridian|	经度|String|Y|
 parallel|	纬度|String|Y|
-province|	省|String|N|
-city|	市|String|N|
-country_town|	区|String|N|
-ip |ip地址|String|N|
-detail_address|	详细地址|String|N|
+ip |ip地址|String|Y|
+detail_address|	详细地址|String|Y|
 
 **设备信息**
 
 参数|	名称|	值类型|	是否必填|	备注
------------- | ------------- | ------------
-brand|	手机品牌|String|N|例：oppo/vivo
-model|	手机型号|String|N|例“SM——A5100
-os_type|	系统类型|String|N|ANDROID/IOS
-imei|	| String|N|
-imsi|	| String|N|
-client_mac|	手机mac地址|String|N|
-client_ip|	IP地址|String|N|
-device_id|	手机序列号|String|N|
-idfa_uuid|	手机广告标识符IDFA|String|N|
-android_id|	手机androidId|String|N|
-os_version|	系统版本|String|N|
-appVersion| 应用版本|String|	|
-total_space|手机存储空间|Sting| |
-useful_space|	手机可用存储空间|String| |
-app_list|	手机装载APP列表|String| |
+------------ | ------------- | ------------ | ------------ | ------------ 
+brand|	手机品牌|String|Y|例：oppo/vivo
+model|	手机型号|String|Y|例“SM——A5100
+os_type|	系统类型|String|Y|ANDROID/IOS
+imei|	| String|Y|
+imsi|	| String|Y|
+client_mac|	手机mac地址|String|Y|
+client_ip|	IP地址|String|Y|
+device_id|	手机序列号|String|Y|
+idfa_uuid|	手机广告标识符IDFA|String|Y|
+wifi_name|	WIFI名称|String|Y|
+android_id|	手机androidId|String|Y|
+os_version|	系统版本|String|Y|
+memory|	手机内存|String|Y|
+total_space|手机存储空间|Sting| Y |
+useful_space|	手机可用存储空间|String| Y |
+screen_resolution|	屏幕分辨率|String| Y |
+network_status|	网络状态|String| Y |
+dpi|	屏幕密度|String| Y |
+height|	屏幕高度|String| Y |
+width|	屏幕宽度|String| Y |
+app_list|	手机装载APP列表|String| N |
 
 
 **运营商数据参数说明**
@@ -165,7 +168,7 @@ channel|	认证渠道|	String|	N|
 
 3、通话详单(operator.call)
 
-参数|	名称	类型	是否可空	说明
+参数|	名称|	类型|	是否必填|	说明
 ------------ | ------------- | ------------
 calltime|	通话时间|	Date|	Y	|
 callphone|	对方号码|	String|	Y	|
