@@ -30,16 +30,16 @@ http://openapi.dev.lattebank.com/xxxchannel/contractList?r_c=XXX(渠道代码大
 ###4.1 请求说明
 ####4.1.1 具体参数定义
 
-参数|  名称|  值类型| 是否可空|  备注
+参数|  名称|  值类型| 是否必填|  备注
 ----------- | ------------- | ------------
-user_id| 第三方机构借款用户ID|  String|  否|第三方用户ID，需要将用户id添加到合同的最下方
-return_url|  合同接口url| String|  是| 合同回调地址
-contract_page| 合同所属的页面 |Integer| 否| 1:补充信息页 2:审批结果页 3:绑卡页面 4:账单页面
-contract_pos|  合同在页面内的顺序展示| Integer| 否 |示例值:1
-amount|  用户选择的金额/分| Long|  是| 
-term|  用户选择的期限| Integer| 是| /
-term_unit| 期限单位|  Integer| 是| 1：天 2：月
-rate | 利率|  String|  是 |0.45
+user_id| 第三方机构借款用户ID|  String|  Y|第三方用户ID，需要将用户id添加到合同的最下方
+return_url|  合同接口url| String|  N| 合同回调地址
+contract_page| 合同所属的页面 |Integer| Y| 1:补充信息页 2:审批结果页 3:绑卡页面 4:账单页面
+contract_pos|  合同在页面内的顺序展示| Integer| Y |示例值:1
+amount|  用户选择的金额/分| Long|  N| 
+term|  用户选择的期限| Integer| N| /
+term_unit| 期限单位|  Integer| N| 1：天 2：月
+rate | 利率|  String|  N |0.45
 
 ####4.1.3 请求示例
 ```
@@ -54,8 +54,8 @@ rate | 利率|  String|  是 |0.45
 ####4.2.1 响应参数定义
 参数|  名称|  值类型| 是否可空 | 备注
 ---------- | ------------- | ------------
-title| 合同标题|  String | 否| /
-contract_url|  合同url| String|  否| /
+title| 合同标题|  String | Y| /
+contract_url|  合同url| String|  Y| /
 ####4.2.2 响应示例
 ```
 {

@@ -18,13 +18,13 @@
 http://openapi.dev.lattebank.com/xxxchannel/lendTrail?r_c=XXX(渠道代码大写)
 ###4.1 请求说明
 ####4.1.1 参数定义
-参数|  名称 | 值类型| 是否可空|  备注
+参数|  名称 | 值类型| 是否必填|  备注
 ----------- | ------------- | ------------
-user_id| 第三方机构借款用户ID|  String|  否|
-product_id|  产品ID|  String | 是 |
-amount|  用户选择的金额/分| Long|  否| 
-stage | 用户选择的期限| Integer| 否 |/
-term_unit |期限单位|  Integer |是| 1：天 2：月
+user_id| 第三方机构借款用户ID|  String|  Y|
+product_id|  产品ID|  String | N |
+amount|  用户选择的金额/分| Long|  Y| 
+stage | 用户选择的期限| Integer| Y |/
+term_unit |期限单位|  Integer |N| 1：天 2：月
 
 ####4.1.2 请求示例
 ```
@@ -39,25 +39,25 @@ term_unit |期限单位|  Integer |是| 1：天 2：月
 ###4.2 响应说明
 ####4.2.1 参数定义
 
-参数|  名称 | 值类型 |是否可空|  备注
+参数|  名称 | 值类型 |是否必填|  备注
 ----------- | ------------- | ------------
-service_fee| 扣除费用/分|  Long | 否| /
-actual_amount| 实际到帐金额/分 | Long | 否 |
-repay_amount | 总还款额/分|  Long | 否 |
-remark | 总还款额费用组成注意：此字段内容金额单位为（元）|  String | 否| 例如：本金1000.00元，利息100.00元
-rate_desc| 利率说明 | String|  否| 例如：您的核批月利率为0.5%，每月等额本息还款。
-repayment_plan|  还款计划|  array（JSON）| 否 |
+service_fee| 扣除费用/分|  Long | Y| /
+actual_amount| 实际到帐金额/分 | Long | Y |
+repay_amount | 总还款额/分|  Long | Y |
+remark | 总还款额费用组成注意：此字段内容金额单位为（元）|  String | Y| 例如：本金1000.00元，利息100.00元
+rate_desc| 利率说明 | String|  Y| 例如：您的核批月利率为0.5%，每月等额本息还款。
+repayment_plan|  还款计划|  array（JSON）| Y |
 
 
 **还款计划（repayment_plan）**
 
-参数|  名称|  值类型| 是否可空|  备注
+参数|  名称|  值类型| 是否必填|  备注
 ----------- | ------------- | ------------
-period_no| 期数|  Integer| 否 |具体的第几期
-due_time|  到期时间|  Timestamp| 否 |到期时间。十位时间戳
-amount|  还款总金额/分 |Long | 否| 应该还的总金额
-principal| 应归还本金/分| Long | 否 |应该还的本金
-interest|  应归还利息/分| Long | 否| 应该还的利息
+period_no| 期数|  Integer| Y |具体的第几期
+due_time|  到期时间|  Timestamp| Y |到期时间。十位时间戳
+amount|  还款总金额/分 |Long | Y| 应该还的总金额
+principal| 应归还本金/分| Long | Y |应该还的本金
+interest|  应归还利息/分| Long | Y| 应该还的利息
 
 ####4.2.2 响应示例
 ```

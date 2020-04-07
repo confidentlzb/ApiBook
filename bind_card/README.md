@@ -30,20 +30,20 @@ http://openapi.dev.lattebank.com/xxxchannel/bindCard?r_c=XXX(渠道代码大写)
       * 还呗接收验证码处理绑卡，并告知第三方机构数据是否接收成功；
 
 ####4.1.1 请求参数定义
-参数|  名称|  值类型| 是否可空|  备注
+参数|  名称|  值类型| 是否必填|  备注
 ----------- | ------------- | ------------
-user_id| 第三方机构借款用户ID|  String|  否|用户ID
-bank_card| 绑卡卡号|  String|  否| 绑卡卡号（完整卡号）
-open_bank| 绑卡开户行| String|  否| 绑定银行卡的开户行（例如：ICBC，ABC，CMB，CCB等）
-user_name| 姓名|  String|  是| 用户姓名，新绑卡时有值，选择已有卡时可能为空
-id_number| 身份证号|  String|  是| 用户身份证号，新绑卡时有值，选择已有旧卡时可能为空
-user_mobile| 手机号| String|  是| 用户手机号，新绑卡时有值，选择已有旧卡时可能为空
-bank_address|  开户行地址| String|  是| 开户行地址，新绑卡时有值，选择已有旧卡时可能为空
-bank_card_type|  绑卡的卡类型|  Integer| 是| 新绑卡时有值，选择已有旧卡时为空。 0：储蓄卡，1：信用卡
-bind_card_src| 区分新旧卡| Integer| 否| 用于还呗区分新旧卡：1=绑定新卡, 2=确认旧卡
-extra_info|  旧卡其他信息|  Object(JSON)|  是| 选择已有旧卡时，值为还呗在银行卡列表回传的值
-contacts|  手机信息|  Object(JSON)|  是| 通讯录、设备等信息
-verify_code| 验证码| String|  否| 验证码
+user_id| 第三方机构借款用户ID|  String|  Y|用户ID
+bank_card| 绑卡卡号|  String|  Y| 绑卡卡号（完整卡号）
+open_bank| 绑卡开户行| String|  Y| 绑定银行卡的开户行（例如：ICBC，ABC，CMB，CCB等）
+user_name| 姓名|  String|  N| 用户姓名，新绑卡时有值，选择已有卡时可能为空
+id_number| 身份证号|  String|  N| 用户身份证号，新绑卡时有值，选择已有旧卡时可能为空
+user_mobile| 手机号| String|  N| 用户手机号，新绑卡时有值，选择已有旧卡时可能为空
+bank_address|  开户行地址| String|  N| 开户行地址，新绑卡时有值，选择已有旧卡时可能为空
+bank_card_type|  绑卡的卡类型|  Integer| N| 新绑卡时有值，选择已有旧卡时为空。 0：储蓄卡，1：信用卡
+bind_card_src| 区分新旧卡| Integer| Y| 用于还呗区分新旧卡：1=绑定新卡, 2=确认旧卡
+extra_info|  旧卡其他信息|  Object(JSON)|  N| 选择已有旧卡时，值为还呗在银行卡列表回传的值
+contacts|  手机信息|  Object(JSON)|  N| 通讯录、设备等信息
+verify_code| 验证码| String|  Y| 验证码
 
 ####4.1.2 请求示例
 * 新绑卡时示例：
@@ -73,10 +73,10 @@ verify_code| 验证码| String|  否| 验证码
 ###4.2 响应说明
 ####4.2.1 参数定义
 
-参数|   值类型 |是否可空|  备注
+参数|   值类型 |是否必填|  备注
 ----------- | ------------- | ------------
-code | Integer |否| 200为绑定成功，其他为失败，其他情况：501该卡未通过审核 502该卡以被绑定 505 绑卡失败 801 验证码不正确 
-message| String|  否| 成功为success,失败为原因
+code | Integer |Y| 200为绑定成功，其他为失败，其他情况：501该卡未通过审核 502该卡以被绑定 505 绑卡失败 801 验证码不正确 
+message| String|  Y| 成功为success,失败为原因
 
 ####4.2.1 响应示例
 ```

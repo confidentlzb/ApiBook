@@ -25,14 +25,14 @@ http://openapi.dev.lattebank.com/xxxchannel/access?r_c=XXX(渠道代码大写)
 ###4.1 请求说明
 ####4.1.1 
 
-参数|名称|值类型|是否可空|备注
+参数|名称|值类型|是否必填|备注
 ------------ | ------------- | ------------
-md5|md5值|String|否|手机号+身份证号拼接生成的md5
-user_mobile|	手机号码|	String|	是|	用户输入的手机号码
-idcard|	身份证号|	String|	是|	用户输入的身份证号
-user_name|	用户姓名|	String|	否|	姓名
-product_id|	产品ID|	String|	是|	第三方标识还呗产品，对接时将会告知还呗
-user_id| 第三方机构借款用户ID|  String|  否|	
+md5|md5值|String|Y|手机号+身份证号拼接生成的md5
+user_mobile|	手机号码|	String|	N|	用户输入的手机号码
+idcard|	身份证号|	String|	N|	用户输入的身份证号
+user_name|	用户姓名|	String|	Y|	姓名
+product_id|	产品ID|	String|	N|	第三方标识还呗产品，对接时将会告知还呗
+user_id| 第三方机构借款用户ID|  String|  Y|	
 
 ####4.1.2 请求示例
 ```
@@ -51,10 +51,10 @@ user_id| 第三方机构借款用户ID|  String|  否|
 
 ####4.2.1 不可申请用户
 #####4.2.1.1 参数含义
-参数|名称|值类型|是否可空|备注
+参数|名称|值类型|是否必填|备注
 ------------ | ------------- | ------------
-status|准入状态|	Integer|	否|不可准入状态是400
-reason|不可申请原因|String|否|code=400时可用。枚举值如下：<br>C003：30天内被还呗审批拒绝过<br>C004：手机号已在还呗App注册<br>C005：用户已在授信中
+status|准入状态|	Integer|	Y|不可准入状态是400
+reason|不可申请原因|String|Y|code=400时可用。枚举值如下：<br>C003：30天内被还呗审批拒绝过<br>C004：手机号已在还呗App注册<br>C005：用户已在授信中
 
 #####4.2.1.2 响应示例
 ```
@@ -71,12 +71,12 @@ reason|不可申请原因|String|否|code=400时可用。枚举值如下：<br>C
 
 #####4.2.2.1 准入成功参数定义
 
-参数	|名称|	值类型|	是否可空|	备注
+参数	|名称|	值类型|	是否必填|	备注
 ------------ | ------------- | ------------
-status|准入状态|	Integer|	否|准入成功状态是200
-approval_amount|可申请最大额度/分|	Long|	否|	单位：分<br>1.返回该用户可申请额度，比如某还呗可申请1000元 ，则返回100000；
-approval_term|	可申请期限|	array(Integer)|	否|	可申请的期限
-term_unit|	期限单位|	Integer	|否	|1：天，2：月
+status|准入状态|	Integer|	Y|准入成功状态是200
+approval_amount|可申请最大额度/分|	Long|	Y|	单位：分<br>1.返回该用户可申请额度，比如某还呗可申请1000元 ，则返回100000；
+approval_term|	可申请期限|	array(Integer)|	Y|	可申请的期限
+term_unit|	期限单位|	Integer	|Y	|1：天，2：月
 
 
 

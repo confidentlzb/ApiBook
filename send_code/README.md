@@ -16,10 +16,10 @@
 http://openapi.dev.lattebank.com/xxxchannel/sendCode?r_c=XXX(渠道代码大写)
 
 ####4.1.1 请求参数定义
-参数|  名称|  值类型| 是否可空|  备注
+参数|  名称|  值类型| 是否必填|  备注
 ----------- | ------------- | ------------
-mobile_no| 手机号|  String|  否|手机号
-type|  短信类型|  String| 否| 发送短信的业务类型：绑卡“BIND_DEBIT”,借款“LEND”，还款“REPAYMENT”
+mobile_no| 手机号|  String|  Y|手机号
+type|  短信类型|  String| Y| 发送短信的业务类型：绑卡“BIND_DEBIT”,借款“LEND”，还款“REPAYMENT”
 
 ####4.1.2 请求示例
 ```
@@ -31,10 +31,10 @@ type|  短信类型|  String| 否| 发送短信的业务类型：绑卡“BIND_D
 
 ####4.2.1 参数定义
 
-参数|   值类型 |是否可空|  备注
+参数|   值类型 |是否必填|  备注
 ----------- | ------------- | ------------
-code | Integer |否| 200为成功，其他为失败
-message| String|  否| 成功为success,失败为原因
+code | Integer |Y| 200为成功，其他为失败
+message| String|  Y| 成功为success,失败为原因
 
 ####4.2.2 响应示例
 ```

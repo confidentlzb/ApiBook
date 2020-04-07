@@ -13,15 +13,15 @@
 http://openapi.dev.lattebank.com/xxxchannel/verifyCard?r_c=XXX(渠道代码大写)
 ###4.1 请求说明
 ####4.1.1 
-参数 | 名称|  值类型 |是否可空|  备注
+参数 | 名称|  值类型 |是否必填|  备注
 ----------- | ------------- | ------------
-bank_card| 卡号|  String|  否| 卡号（完整卡号）
-user_name| 姓名|  String|  否| 用户姓名
-id_number| 身份证号|  String|  否| 用户身份证号
-user_mobile| 手机号| String|  是| 用户手机号
-bank_card_type|  卡类型| Integer| 是| 0：储蓄卡，1：信用卡
-bank_address|  开户行地址| String|  是| 开户行地址
-open_bank| 绑卡开户行| String|  是| 绑定银行卡的开户行（例如：ICBC，ABC，CMB，CCB等）
+bank_card| 卡号|  String|  Y| 卡号（完整卡号）
+user_name| 姓名|  String|  Y| 用户姓名
+id_number| 身份证号|  String|  Y| 用户身份证号
+user_mobile| 手机号| String|  N| 用户手机号
+bank_card_type|  卡类型| Integer| N| 0：储蓄卡，1：信用卡
+bank_address|  开户行地址| String|  N| 开户行地址
+open_bank| 绑卡开户行| String|  N| 绑定银行卡的开户行（例如：ICBC，ABC，CMB，CCB等）
 
 ####4.1.2 请求示例
 ```

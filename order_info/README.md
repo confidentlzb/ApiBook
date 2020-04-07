@@ -33,63 +33,63 @@
 ####4.1.1 
 
 
-参数|	名称|	值类型|	是否可空|	备注
+参数|	名称|	值类型|	是否必填|	备注
 ------------ | ------------- | ------------
-is_reloan|	用于标识订单是否为复贷简化流程|	int	|否|	对于有复贷简化流程的还呗会有，当有该字段，并且值为1时标识为复贷简化流程，否则为正常流程
-order_info|	订单基本信息|	object(JSON)|	否	|
-apply_detail|	申请人填写的基本信息|	object(JSON)|	否|	
-add_info|	抓取数据，其中包含：<br>1. 京东信息（jd）<br>2. 支付宝信息（alipay）<br>3. 运营商信息(mobile) <br>4. 信用卡邮箱账单（ec）：包含账单明细信息 <br>5. 储蓄卡网银信息（ibank）：包含网银交易流水信息 <br>6. 信用卡网银信息（icredit）：包含网银交易流水信息 <br>8. 社保（insure）：包含社保缴费流水信息 <br>9. 公积金（fund）<br>10. 淘宝（taobao）<br>11. 学信网（chsi）<br>|	object(JSON)|	否|	根据还呗要求的抓取项配置返回
-add_report_info	|抓取数据报告，其中包含：<br>1. 京东信息（jd）<br>2. 支付宝信息（alipay）<br>3. 运营商信息(mobile) <br>4. 信用卡邮箱账单（ec）：包含账单明细信息 <br>5. 储蓄卡网银信息（ibank）：包含网银交易流水信息 <br>6. 信用卡网银信息（icredit）：包含网银交易流水信息 <br>8. 社保（insure）：包含社保缴费流水信息 <br>9. 公积金（fund）<br>10. 淘宝（taobao）|	object(JSON)|	否|	根据还呗要求的抓取项配置返回
-idcard_info|	身份信息|	object(JSON)|	是|	身份证、活体识别
-append_info|	补充信息|	object(JSON)|	是|	补充字段信息针对各还呗配置
-contacts|	手机信息|	object(JSON)|	是|	通讯录、设备等信息
-extra_info|	其他信息，其中包含：1. 第三方机构数据（fanli_data）|	object(JSON)|	是|	三方数据等信息
+is_reloan|	用于标识订单是否为复贷简化流程|	int	|Y|	对于有复贷简化流程的还呗会有，当有该字段，并且值为1时标识为复贷简化流程，否则为正常流程
+order_info|	订单基本信息|	object(JSON)|	Y	|
+apply_detail|	申请人填写的基本信息|	object(JSON)|	Y|	
+add_info|	抓取数据，其中包含：<br>1. 京东信息（jd）<br>2. 支付宝信息（alipay）<br>3. 运营商信息(mobile) <br>4. 信用卡邮箱账单（ec）：包含账单明细信息 <br>5. 储蓄卡网银信息（ibank）：包含网银交易流水信息 <br>6. 信用卡网银信息（icredit）：包含网银交易流水信息 <br>8. 社保（insure）：包含社保缴费流水信息 <br>9. 公积金（fund）<br>10. 淘宝（taobao）<br>11. 学信网（chsi）<br>|	object(JSON)|	Y|	根据还呗要求的抓取项配置返回
+add_report_info	|抓取数据报告，其中包含：<br>1. 京东信息（jd）<br>2. 支付宝信息（alipay）<br>3. 运营商信息(mobile) <br>4. 信用卡邮箱账单（ec）：包含账单明细信息 <br>5. 储蓄卡网银信息（ibank）：包含网银交易流水信息 <br>6. 信用卡网银信息（icredit）：包含网银交易流水信息 <br>8. 社保（insure）：包含社保缴费流水信息 <br>9. 公积金（fund）<br>10. 淘宝（taobao）|	object(JSON)|	Y|	根据还呗要求的抓取项配置返回
+idcard_info|	身份信息|	object(JSON)|	N|	身份证、活体识别
+append_info|	补充信息|	object(JSON)|	N|	补充字段信息针对各还呗配置
+contacts|	手机信息|	object(JSON)|	N|	通讯录、设备等信息
+extra_info|	其他信息，其中包含：1. 第三方机构数据（fanli_data）|	object(JSON)|	N|	三方数据等信息
 
 **订单基本信息(order_info)**
 
-参数|	名称|	值类型|	是否可空|	备注
+参数|	名称|	值类型|	是否必填|	备注
 ------------ | ------------- | ------------
-order_no|	订单编号|	string|	否	|
-user_name|	用户名|	string|	否|	
-user_id|用户Id|	string|	否|	
-user_mobile|	用户手机号码|	string|	否|	
-application_amount|	申请金额(单位：分)|	long|	否|	
-application_term|	申请期限|	int	|否|	
-application_term_unit|	期限单位（1：天，2：月）|	int|	否|	
-order_time|	订单创建时间(精确到秒)|	timestamp|	否|	
-status|	订单状态|	string|	否|	
-province|	省|	string|	否|	
-city|	市|	string|	否|	
-county|	区|	string|	否|	
-bank|	还呗名|	string|	否|	
-product|	产品名|	string|	否|	
-product_id|	产品ID|	int|	否|	
-authed_data	|认证项|	array(string)|	是|	用户已认证的第三方数据
+order_no|	订单编号|	string|	Y	|
+user_name|	用户名|	string|	Y|	
+user_id|用户Id|	string|	Y|	
+user_mobile|	用户手机号码|	string|	Y|	
+application_amount|	申请金额(单位：分)|	long|	Y|	
+application_term|	申请期限|	int	|Y|	
+application_term_unit|	期限单位（1：天，2：月）|	int|	Y|	
+order_time|	订单创建时间(精确到秒)|	timestamp|	Y|	
+status|	订单状态|	string|	Y|	
+province|	省|	string|	Y|	
+city|	市|	string|	Y|	
+county|	区|	string|	Y|	
+bank|	还呗名|	string|	Y|	
+product|	产品名|	string|	Y|	
+product_id|	产品ID|	int|	Y|	
+authed_data	|认证项|	array(string)|	N|	用户已认证的第三方数据
 
 **申请人基本信息说明（apply_detail）**
 
-参数|	名称|	值类型|	是否可空|	备注
+参数|	名称|	值类型|	是否必填|	备注
 ------------ | ------------- | ------------
-bureau_user_name|	本人姓名|	string|	否|	张三
-idcard_no|	本人身份证号码	|string	|否|	300000000002000000
-phone_number_house|	本人手机号|	string|	否|	18100000000
-asset_auto_type|	车辆情况|	枚举	|否|	1. 无车 <br>2.本人名下有车，无贷款<br>3.本人名下有车，有按揭贷款<br>4. 本人名下有车，但已被抵押<br>5.其它
-user_education|	教育程度|	枚举|	是|	1. 硕士及以上<br>2. 本科<br>3.大专<br>4. 中专/高中及以下
-is_op_type|	职业类别|	枚举|	是|	1. 企业主<br>2. 个体工商户<br>4. 上班人群<br>5. 学生<br>6. 无固定职业
-operating_year|	经营年限|	枚举	|是|	is_op_type=1&2该字段存在；<br>1. 不足3月<br>2. 3-6个月<br>3. 7-12个月<br>4. 1-2年<br>5. 3-4年<br>6. 5年及以上
-corporate_flow|	经营流水(对公流水)（单位：分）|	long|	是	|只有is_op_type=1&2该字段存在
-work_period|	现单位工作年限	|枚举|	是|	只有is_op_type=4该字段存在；<br>1. 0-5个月<br>2. 6-11个月<br>3. 1-3年<br>4. 3-7年<br>5. 7年
-user_income_by_card|	月工资收入（单位：分）|	long|	是|	只有is_op_type=4该字段存在
-max_monthly_repayment|	可接受最高月还款额（单位：分）|	long|	否	
-user_social_security|	现单位是否缴纳社保|	枚举	|是|	仅当is_op_type=4时，用户为上班族时才有<br>1. 缴纳本地社保<br>2. 无社保
-monthly_average_income|	月平均收入（单位：分）|	long|	是|	只有当is_op_type=10才有
-ip_address|	IP地址|	string|	是|	117.136.84.9
-platform|	手机平台|	string|	否|	android / ios
-device_num|	手机设备号（iOS是IDFA，Andr是IMEI）|	string|	是|	862466034655845
-phone_brand	|手机品牌	|string	|是	|"vivo"
-device_info|	设备信息|	string|	是|	"vivo X7Plus"
-gps_location|	GPS信息|	string|	是|	102.596323,25.088703
-gps_address	|GPS地址|	string|	是|	中国 浙江省 杭州市 
+bureau_user_name|	本人姓名|	string|	Y|	张三
+idcard_no|	本人身份证号码	|string	|Y|	300000000002000000
+phone_number_house|	本人手机号|	string|	Y|	18100000000
+asset_auto_type|	车辆情况|	枚举	|Y|	1. 无车 <br>2.本人名下有车，无贷款<br>3.本人名下有车，有按揭贷款<br>4. 本人名下有车，但已被抵押<br>5.其它
+user_education|	教育程度|	枚举|	N|	1. 硕士及以上<br>2. 本科<br>3.大专<br>4. 中专/高中及以下
+is_op_type|	职业类别|	枚举|	N|	1. 企业主<br>2. 个体工商户<br>4. 上班人群<br>5. 学生<br>6. 无固定职业
+operating_year|	经营年限|	枚举	|N|	is_op_type=1&2该字段存在；<br>1. 不足3月<br>2. 3-6个月<br>3. 7-12个月<br>4. 1-2年<br>5. 3-4年<br>6. 5年及以上
+corporate_flow|	经营流水(对公流水)（单位：分）|	long|	N	|只有is_op_type=1&2该字段存在
+work_period|	现单位工作年限	|枚举|	N|	只有is_op_type=4该字段存在；<br>1. 0-5个月<br>2. 6-11个月<br>3. 1-3年<br>4. 3-7年<br>5. 7年
+user_income_by_card|	月工资收入（单位：分）|	long|	N|	只有is_op_type=4该字段存在
+max_monthly_repayment|	可接受最高月还款额（单位：分）|	long|	Y	
+user_social_security|	现单位是否缴纳社保|	枚举	|N|	仅当is_op_type=4时，用户为上班族时才有<br>1. 缴纳本地社保<br>2. 无社保
+monthly_average_income|	月平均收入（单位：分）|	long|	N|	只有当is_op_type=10才有
+ip_address|	IP地址|	string|	N|	117.136.84.9
+platform|	手机平台|	string|	Y|	android / ios
+device_num|	手机设备号（iOS是IDFA，Andr是IMEI）|	string|	N|	862466034655845
+phone_brand	|手机品牌	|string	|N	|"vivo"
+device_info|	设备信息|	string|	N|	"vivo X7Plus"
+gps_location|	GPS信息|	string|	N|	102.596323,25.088703
+gps_address	|GPS地址|	string|	N|	中国 浙江省 杭州市 
 
 
 * 备注：基本信息字段基于商家需要返回，商家仅解析所需字段，第三方机构新增返回字段时应无影响。
@@ -97,99 +97,99 @@ gps_address	|GPS地址|	string|	是|	中国 浙江省 杭州市
 
 **身份信息(idcard_info)**
 
-参数|	名称|	值类型|	是否可空|	备注
+参数|	名称|	值类型|	是否必填|	备注
 ------------ | ------------- | ------------
-assay_type|	活体来源|	string|	否|	目前仅支持face++
-delta|	face++ 上传数据的校验字符串的base64值的下载地址|	string	|是|	在配合MegLive SDK使用时，用于校验上传数据的校验字符串，此字符串会由MegLive SDK直接返回
-id_data_zip|	影像件打包地址	|string|	是|	获取时，通过文件流的形式下载。<br>影像资料文件包名：文件包名(渠道编号+order_no).gz<br>各影像文件命名规范：影像类型编号（4位）+”_”+序号（2位01开始）如：0101_01<br>0102 身份证正面<br>0103 身份证反面<br>0188 人脸识别或手持身份证照片
-id_positive	|ID正面	|array(String)|	否|	"http://l0.51fanli.net/fun/2018/01<br>/8d3f8020eb2855b5e5aa.jpg"
-id_negative	|ID反面|	array(String)|	否|	"http://l0.51fanli.net/fun/2018/01<br>/8d3f8020eb2855b5e5aa.jpg"
-photo_assay	|活体识别|	array(String)|	否|	活体识别照片，一般为6张，默认第一张为最佳照片，第二张为半身照，后面是动作照。"http://l0.51fanli.net/fun/2018/01<br>/8d3f8020eb2855b5e5aa.jpg"<br>......
-name_ocr|	姓名（OCR）|	string|	否|	张三|
-id_number_ocr|	身份证号（OCR）|	string|	否|	14120219802061530
-id_due_time_ocr|	身份证有效期（OCR）|	string|	否	|2011.11.28-2021.11.28
-id_address_ocr|	身份证地址（OCR）|	string|	否	
-id_sex_ocr|	性别（OCR）|	string|	否|	男
-id_ethnic_ocr|	民族（OCR）|	string|	否	|汉
-id_issue_org_ocr|	签发机关（OCR）|	string|	否	
-scores_assay_face|	活体检测分face++	|string	|否	|从face++获取的活体比对分数，取值[0,100]，数字越大越可能是同一人。
-scores_range_assay_face|	活体检测分数线face++|	string|	否|	从face++获取的不同误识率下活体比对分数阈值，还呗可自行选择，第三方机构默认按照1e-5进行比对。<br>1e-3：误识率为千分之一的置信度阈值；<br>1e-4：误识率为万分之一的置信度阈值；<br>1e-5：误识率为十万分之一的置信度阈值;<br>1e-6：误识率为百万分之一的置信度阈值。<br>阈值不是静态的，每次比对返回的阈值不保证相同，需要用同一次返回的scores_assay_face与scores_range_assay_face对比来进行判断是够通过
-face_response|	face++返回内容|	object(JSON)|	是	|face++人脸对比返回结果，具体字段见附录
+assay_type|	活体来源|	string|	Y|	目前仅支持face++
+delta|	face++ 上传数据的校验字符串的base64值的下载地址|	string	|N|	在配合MegLive SDK使用时，用于校验上传数据的校验字符串，此字符串会由MegLive SDK直接返回
+id_data_zip|	影像件打包地址	|string|	N|	获取时，通过文件流的形式下载。<br>影像资料文件包名：文件包名(渠道编号+order_no).gz<br>各影像文件命名规范：影像类型编号（4位）+”_”+序号（2位01开始）如：0101_01<br>0102 身份证正面<br>0103 身份证反面<br>0188 人脸识别或手持身份证照片
+id_positive	|ID正面	|array(String)|	Y|	"http://l0.51fanli.net/fun/2018/01<br>/8d3f8020eb2855b5e5aa.jpg"
+id_negative	|ID反面|	array(String)|	Y|	"http://l0.51fanli.net/fun/2018/01<br>/8d3f8020eb2855b5e5aa.jpg"
+photo_assay	|活体识别|	array(String)|	Y|	活体识别照片，一般为6张，默认第一张为最佳照片，第二张为半身照，后面是动作照。"http://l0.51fanli.net/fun/2018/01<br>/8d3f8020eb2855b5e5aa.jpg"<br>......
+name_ocr|	姓名（OCR）|	string|	Y|	张三|
+id_number_ocr|	身份证号（OCR）|	string|	Y|	14120219802061530
+id_due_time_ocr|	身份证有效期（OCR）|	string|	Y	|2011.11.28-2021.11.28
+id_address_ocr|	身份证地址（OCR）|	string|	Y	
+id_sex_ocr|	性别（OCR）|	string|	Y|	男
+id_ethnic_ocr|	民族（OCR）|	string|	Y	|汉
+id_issue_org_ocr|	签发机关（OCR）|	string|	Y	
+scores_assay_face|	活体检测分face++	|string	|Y	|从face++获取的活体比对分数，取值[0,100]，数字越大越可能是同一人。
+scores_range_assay_face|	活体检测分数线face++|	string|	Y|	从face++获取的不同误识率下活体比对分数阈值，还呗可自行选择，第三方机构默认按照1e-5进行比对。<br>1e-3：误识率为千分之一的置信度阈值；<br>1e-4：误识率为万分之一的置信度阈值；<br>1e-5：误识率为十万分之一的置信度阈值;<br>1e-6：误识率为百万分之一的置信度阈值。<br>阈值不是静态的，每次比对返回的阈值不保证相同，需要用同一次返回的scores_assay_face与scores_range_assay_face对比来进行判断是够通过
+face_response|	face++返回内容|	object(JSON)|	N	|face++人脸对比返回结果，具体字段见附录
 
 **补充信息(append_info)**
 
-参数|	名称|	值类型|	是否可空|	备注
+参数|	名称|	值类型|	是否必填|	备注
 ------------ | ------------- | ------------
-addr_detail|	现居住地址|	string|	是|	
-addr_code_detail|	现居住地址行政区码|	string|	是|	
-family_phone_number|	家庭电话|	string|	是|	
-company_addr_detail|	现公司/单位地址|	string|	是	|
-company_addr_code_detail|	现公司/单位地址行政区码|	string|	是	|
-company_name|	现公司/单位名称|	string|	是|	
-company_number|	现公司/单位电话|	string|	是|	
-emergency_contact_personA_relationship|	紧急联系人A关系|	string|	是|	1:父母；2:配偶；3:兄弟；4:姐妹；
-emergency_contact_personA_name|	紧急联系人A姓名|	string|	是|	
-emergency_contact_personA_phone|	紧急联系人A电话|	string|	是|	
-emergency_contact_personB_relationship|	紧急联系人B关系|	string|	是|	3:兄弟；4:姐妹；5:朋友；
-emergency_contact_personB_name|	紧急联系人B姓名|	string|	是|	
-emergency_contact_personB_phone|	紧急联系人B电话|	string|	是|	
-user_marriage|	婚姻状况|	string|	是|	1:未婚；2:已婚，无子女；3:已婚，有子女；4:离异；5:丧偶；6:复婚；7:其他（请备注）；
-user_email|	email|	string|	是|	jiekuan@qq.com
-time_graduation|	毕业时间|	string|	是|	2000-06-01
-loan_purpose|	贷款用途|	string	|是	|
-repayment_way|	还款方式|	string	|是|	
+addr_detail|	现居住地址|	string|	N|	
+addr_code_detail|	现居住地址行政区码|	string|	N|	
+family_phone_number|	家庭电话|	string|	N|	
+company_addr_detail|	现公司/单位地址|	string|	N	|
+company_addr_code_detail|	现公司/单位地址行政区码|	string|	N	|
+company_name|	现公司/单位名称|	string|	N|	
+company_number|	现公司/单位电话|	string|	N|	
+emergency_contact_personA_relationship|	紧急联系人A关系|	string|	N|	1:父母；2:配偶；3:兄弟；4:姐妹；
+emergency_contact_personA_name|	紧急联系人A姓名|	string|	N|	
+emergency_contact_personA_phone|	紧急联系人A电话|	string|	N|	
+emergency_contact_personB_relationship|	紧急联系人B关系|	string|	N|	3:兄弟；4:姐妹；5:朋友；
+emergency_contact_personB_name|	紧急联系人B姓名|	string|	N|	
+emergency_contact_personB_phone|	紧急联系人B电话|	string|	N|	
+user_marriage|	婚姻状况|	string|	N|	1:未婚；2:已婚，无子女；3:已婚，有子女；4:离异；5:丧偶；6:复婚；7:其他（请备注）；
+user_email|	email|	string|	N|	jiekuan@qq.com
+time_graduation|	毕业时间|	string|	N|	2000-06-01
+loan_purpose|	贷款用途|	string	|N	|
+repayment_way|	还款方式|	string	|N|	
 
 * 备注：补充信息字段基于商家需要返回，商家仅解析所需字段，第三方机构新增返回字段时应无影响。
 **手机信息(contacts)**
 
-参数|	名称|	值类型|	是否可空|	备注
+参数|	名称|	值类型|	是否必填|	备注
 ------------ | ------------- | ------------
-device_num|	手机设备号（iOS是IDFA，Andr是IMEI）|	string|	是|	有些手机刷机后或者一些模拟器会缺失
-device_info|	手机型号|	string|	否|	
-platform|	手机平台|	string|	否|	Android / iOS
-app_location|	手机GPS信息|	object(JSON)|	是|	用户不开启的情况会缺失
-app_location.lat|	纬度|	string|	是|	26.458051
-app_location.lon|	经度	|string	|是|	106.521519
-app_location.address|	定位地址|	string|	是|	中国 贵州省 贵阳市 花溪区 金马大道
-phone_list|	手机通讯录|	array(JSON)|	是|	用户未开权限或者没有通讯录会缺失，若需要紧急联系人信息，则该字段一定会获取到。
-phone_list[].name|	手机通讯录姓名|	string|	是|	张三
-phone_list[].phone|	手机通讯录号码|	string|	是|	18000000000
-phone_list[].createtime|	手机通讯录获取时间|	string|	是|	
-call_log|	手机通话记录|	array(JSON)|	是|	用户未开权限或者没有通讯录会缺失
-call_log[].type|	通话记录类型|	string|	是|	1.来电 2.去电 3.未接
-call_log[].phone|	通话记录手机号码|	string|	是|	
-call_log[].date|	通话记录时间|	string|	否|	2017-01-01 12:09
-call_log[].duration|	通话记录时长|	string|	否|	88
-apps|	应用安装列表|	array(JSON)|	是|	用户未开权限会缺失
-apps.appName|	应用名称|	string|	否|	王者荣耀
-apps.versionName|	应用版本|	string|	否|	1.34.1.11
-device_info_all	|手机设备信息|	string|	是|	
+device_num|	手机设备号（iOS是IDFA，Andr是IMEI）|	string|	N|	有些手机刷机后或者一些模拟器会缺失
+device_info|	手机型号|	string|	Y|	
+platform|	手机平台|	string|	Y|	Android / iOS
+app_location|	手机GPS信息|	object(JSON)|	N|	用户不开启的情况会缺失
+app_location.lat|	纬度|	string|	N|	26.458051
+app_location.lon|	经度	|string	|N|	106.521519
+app_location.address|	定位地址|	string|	N|	中国 贵州省 贵阳市 花溪区 金马大道
+phone_list|	手机通讯录|	array(JSON)|	N|	用户未开权限或者没有通讯录会缺失，若需要紧急联系人信息，则该字段一定会获取到。
+phone_list[].name|	手机通讯录姓名|	string|	N|	张三
+phone_list[].phone|	手机通讯录号码|	string|	N|	18000000000
+phone_list[].createtime|	手机通讯录获取时间|	string|	N|	
+call_log|	手机通话记录|	array(JSON)|	N|	用户未开权限或者没有通讯录会缺失
+call_log[].type|	通话记录类型|	string|	N|	1.来电 2.去电 3.未接
+call_log[].phone|	通话记录手机号码|	string|	N|	
+call_log[].date|	通话记录时间|	string|	Y|	2017-01-01 12:09
+call_log[].duration|	通话记录时长|	string|	Y|	88
+apps|	应用安装列表|	array(JSON)|	N|	用户未开权限会缺失
+apps.appName|	应用名称|	string|	Y|	王者荣耀
+apps.versionName|	应用版本|	string|	Y|	1.34.1.11
+device_info_all	|手机设备信息|	string|	N|	
 
 **其他信息(extra_info)**
 
-参数	|名称|	值类型|	是否可空|	备注
+参数	|名称|	值类型|	是否必填|	备注
 ------------ | ------------- | ------------
-fanli_data|	第三方机构数据|	object(JSON)|	是|	
-fanli_data.user_order_submit_time|	购物时段分布|	string|	是|	18点-24点
-fanli_data.user_order_history_count|	用户历史下单数|	string|	是|	10
-fanli_data.user_history_amount|	用户历史消费总金额|	string|	是|	2179.76
-fanli_data.user_order_count_6|	用户最近6个月下单数|	string|	是|	4
-fanli_data.user_order_count_12|	用户最近12个月下单数|	string|	是|	9
-fanli_data.user_amount_6|	近六个月消费金额|	string|	是|	491.66
-fanli_data.user_amount_12|	近一年下单数|	string|	是|	2130.76
-fanli_data.user_platform|	用户产生过交易行为的平台	|string|	是|	京东商城,同程旅游,淘宝网
-fanli_data.user_register_time|	用户注册时长|	string|	是|	1458974132
-fanli_data.level|	会员等级|	string|	是|	1
+fanli_data|	第三方机构数据|	object(JSON)|	N|	
+fanli_data.user_order_submit_time|	购物时段分布|	string|	N|	18点-24点
+fanli_data.user_order_history_count|	用户历史下单数|	string|	N|	10
+fanli_data.user_history_amount|	用户历史消费总金额|	string|	N|	2179.76
+fanli_data.user_order_count_6|	用户最近6个月下单数|	string|	N|	4
+fanli_data.user_order_count_12|	用户最近12个月下单数|	string|	N|	9
+fanli_data.user_amount_6|	近六个月消费金额|	string|	N|	491.66
+fanli_data.user_amount_12|	近一年下单数|	string|	N|	2130.76
+fanli_data.user_platform|	用户产生过交易行为的平台	|string|	N|	京东商城,同程旅游,淘宝网
+fanli_data.user_register_time|	用户注册时长|	string|	N|	1458974132
+fanli_data.level|	会员等级|	string|	N|	1
 
 
 ####4.1.1 请求示例
 
 ###4.2 响应说明
 
-参数|	名称|	值类型|	是否可空|	备注
+参数|	名称|	值类型|	是否必填|	备注
 ------------ | ------------- | ------------
-verify_info|	缺失的抓取数据var_name的数组|	array|	是|	返回空数组[] 例如：["jingdong","alipay"]
-other_info|	缺失的其他信息政策模板的数组|	array|	是|	返回空数组[] 例如：["addr_detail"]
+verify_info|	缺失的抓取数据var_name的数组|	array|	N|	返回空数组[] 例如：["jingdong","alipay"]
+other_info|	缺失的其他信息政策模板的数组|	array|	N|	返回空数组[] 例如：["addr_detail"]
 
 * 正常示例：
 

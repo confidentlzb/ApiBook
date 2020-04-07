@@ -19,10 +19,10 @@
 ###4.1 请求说明
 ####4.1.1 参数定义
 
-参数|  名称 | 值类型| 是否可空|  备注
+参数|  名称 | 值类型| 是否必填|  备注
 ----------- | ------------- | -----
-mobile_no|手机号|String|否|
-type|使用场景|String|否|验证码使用场景
+mobile_no|手机号|String|Y|
+type|使用场景|String|Y|验证码使用场景
 
 ####4.1.2 请求示例
 
@@ -36,10 +36,10 @@ type|使用场景|String|否|验证码使用场景
 ###4.2 响应说明
 ####4.2.1 参数定义
 
-参数|  名称 | 值类型| 是否可空|  备注
+参数|  名称 | 值类型| 是否必填|  备注
 ----------- | ------------- | ------------
-result_code|结果码|String|否|成功：SUCCESS <br>失败：FAIL
-error_msg|拒绝原因|String|是|失败原因
+result_code|结果码|String|Y|成功：SUCCESS <br>失败：FAIL
+error_msg|拒绝原因|String|N|失败原因
 
 ####4.2.2 响应示例
 ```
@@ -52,11 +52,11 @@ error_msg|拒绝原因|String|是|失败原因
 ###5.1 请求说明
 ####5.1.1 参数定义
 
-参数|  名称 | 值类型| 是否可空|  备注
+参数|  名称 | 值类型| 是否必填|  备注
 ----------- | ------------- | -----
-mobile_no|手机号|String|否|
-type|使用场景|String|否|验证码使用场景
-dynamic_code|验证码|String|否|
+mobile_no|手机号|String|Y|
+type|使用场景|String|Y|验证码使用场景
+dynamic_code|验证码|String|Y|
 
 
 ####5.1.2 请求示例
@@ -72,10 +72,10 @@ dynamic_code|验证码|String|否|
 ###5.2 响应说明
 ####5.2.1 参数定义
 
-参数|  名称 | 值类型| 是否可空|  备注
+参数|  名称 | 值类型| 是否必填|  备注
 ----------- | ------------- | ------------
-result_code|结果码|String|否|成功：SUCCESS <br>失败：FAIL
-error_msg|拒绝原因|String|是|失败原因
+result_code|结果码|String|Y|成功：SUCCESS <br>失败：FAIL
+error_msg|拒绝原因|String|N|失败原因
 
 ####5.2.2 响应示例
 ```
