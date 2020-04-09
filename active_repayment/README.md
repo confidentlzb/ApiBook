@@ -32,8 +32,7 @@ http://openapi.dev.lattebank.com/xxxchannel/confirm/repay?r_c=XXX(渠道代码�
 参数|  名称|  值类型| 是否必填 | 备注
 ----------- | ------------- | ------------
 order_no|  订单编号|  String|  Y| /
-period_nos|  还款期数|  String|  Y |期数：1,2,3...all。all表示所有期。
-只能是以上枚举值中的一种，不会出现1,2的情况。例如第一期，回传1。第二期，回传2。
+period_nos|  还款期数|  String|  Y |期数：1,2,3...all。all表示所有期。只能是以上枚举值中的一种，不会出现1,2的情况。例如第一期，回传1。第二期，回传2。
 repayment_id|  还款ID|  String|  Y| 必须，还呗可根据此ID关联一笔还款申请
 bank_card| 卡号|  String|  Y| 卡号（完整卡号）
 
