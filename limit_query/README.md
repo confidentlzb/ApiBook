@@ -1,7 +1,7 @@
-##1. 授信结果查询接口
-在经过一段时间后第三方机构没有收到审批结果，则可以调用还呗提供的授信结果查询接口来获取结果。
+##1. 额度查询接口
+返回最新的额度信息
 ##2. 调用场景
-第三方机构在未收到授信结果时调用。
+在授信后或者借款前可以调用该接口获取最新的额度，减少借款数超出额度的情况。
 
 
 
@@ -14,7 +14,7 @@
 
 
 ##4. 接口定义
-http://openapi.dev.lattebank.com/xxxchannel/queryAudit?r_c=XXX(渠道代码大写)
+http://openapi.dev.lattebank.com/xxxchannel/queryLimit?r_c=XXX(渠道代码大写)
 ###4.1 请求说明
 ####4.1.1 参数定义
 参数|  名称 | 值类型| 是否必填|  备注
@@ -46,7 +46,7 @@ loan_rate | 费率|  String|  N |费率，同期数返回，每期对应
 
 
 ####4.2.2 
-* 审批通过
+
 ```
 {     
     "code": 200,
@@ -62,35 +62,6 @@ loan_rate | 费率|  String|  N |费率，同期数返回，每期对应
 			"range_amount": 100,
 			"user_id": "9996687696699"
 		}    
-}
-```
-* 审批未通过
-```
-{
-    "code": 200,
-    "message": "success",
-    "bizContent":{
-        "user_id":"245132241561415",
-        "conclusion":2,       
-        "instructions":"信用评分过低",
-        "approval_time":152323123946
-    }
-}
-```
-
-* 审核中
-
-```
-
-{
-    "code": 200,
-    "message": "success"
-    "bizContent":{
-         "user_id":"245132241561415",
-        "conclusion":3,       
-        "instructions":"正在审核中",
-        "approval_time":152323123946
-    }
 }
 ```
 

@@ -8,6 +8,8 @@
 * [授信接口](order_info_reloan/README.md)
 * [授信查询](credit_inquiry/README.md)
 * [授信结果推送](credit_result_push/README.md)
+* [额度查询](limit_query/README.md)
+* [额度推送](limit_push/README.md)
 * [银行卡列表接口](back_card_list/README.md)
 * [绑卡接口](bank_verify/README.md)
 * [协议支付验证接口](bind_card/README.md)

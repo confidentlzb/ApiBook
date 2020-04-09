@@ -26,7 +26,7 @@ http://openapi.dev.lattebank.com/xxxchannel/access?r_c=XXX(渠道代码大写)
 
 参数|名称|值类型|是否必填|备注
 ------------ | ------------- | ------------
-user_mobile|	手机号码|	String|	Y|	用户输入的手机号码
+md5|	手机号码md5|	String|	Y|	手机号码的MD5，最好大写
 product_id|	产品ID|	String|	N|	第三方标识还呗产品，对接时将会告知还呗
 user_id| 第三方机构借款用户ID|  String|  N|	
 
@@ -39,15 +39,15 @@ user_id| 第三方机构借款用户ID|  String|  N|
 }
 ```
 ###4.2 响应说明
-* code=400的时候表示用户不可以申请，此时需要返回不可申请的原因，具体参见不可申请用户
-* code=200的时候表示用户可以申请   
+* code=4XX或者5XX代表客户端和服务器错误
+* code=200的时候表示接口响应正常
 
-####4.2.1 不可申请用户
+####4.2.1 业务响应内容bizcontent
 #####4.2.1.1 参数含义
 参数|名称|值类型|是否必填|备注
 ------------ | ------------- | ------------ | ------------ | ------------ 
-status|准入状态|	Integer|	Y|不可准入状态是400
-reason|不可申请原因|String|Y|code=400时可用。枚举值如下：<br>C003：还呗审批拒绝过<br>C004：手机号已在还呗App注册
+result|准入结果|	String|	Y|ACCEPT:可申请REJECT:不可申请
+reasonCode|不可申请原因|String|Y|code=400时可用。枚举值如下：<br>C003：还呗审批拒绝过<br>C004：手机号已在还呗App注册
 
 #####4.2.1.2 响应示例
 ```
@@ -55,18 +55,17 @@ reason|不可申请原因|String|Y|code=400时可用。枚举值如下：<br>C00
   "code": 200,
   "message": "",
   “bizContent”: {
-  	 "status":400,
+  	 "result":"REJECT",
     "reason": "C004"
   }  
 }
 ```
 
-
 #####4.2.2.1 准入成功参数定义
 
 参数	|名称|	值类型|	是否必填|	备注
------------- | ------------- | ------------
-status|准入状态|	Integer|	Y|准入成功状态是200
+------------ | ------------- | ------------ | ------------ | ------------ 
+result|准入结果|	Integer|	Y|ACCEPT
 approval_amount|可申请最大额度/分|	Long|	Y|	单位：分<br>1.返回该用户可申请额度，比如某还呗可申请1000元 ，则返回100000；
 approval_term|	可申请期限|	array(Integer)|	Y|	可申请的期限
 term_unit|	期限单位|	Integer	|Y	|1：天，2：月

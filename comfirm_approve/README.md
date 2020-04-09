@@ -24,6 +24,7 @@ loan_amount| 审批金额/分|  Long|  Y |
 stage |审批期限 | Integer| Y| /
 term_unit |期限单位|  Integer| Y |1：天2：月
 loan_purpose | 贷款用途|  String|  N |
+bank_card| 卡号|  String|  Y| 卡号（完整卡号）
 verify_code| 验证码| String|  Y| 验证码
 
 ####4.1.2 请求示例
@@ -35,6 +36,7 @@ verify_code| 验证码| String|  Y| 验证码
   "stage": 12,
   "term_unit": 2,
   "loan_purpose":"消费",
+  "bank_card":"62252211445533655",
   "verify_code":"2345"
    }
 ```
