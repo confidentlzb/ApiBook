@@ -43,12 +43,12 @@ verify_code| 验证码| String|  Y| 验证码
   "term_unit": 2,
   "loan_purpose":"消费",
   "bank_card":"62252211445533655",
-   "income_information":"5000-10000",
+  "income_information":"5000-10000",
   "company_name":"阿里巴巴中国有限公司",
-   "company_telephone":"021-11223322",
-    "company_address":"杭州市电商大道100号",
-    "email":"test@alibaba.com",
-     marriage_enum":"未婚",
+  "company_telephone":"021-11223322",
+  "company_address":"杭州市电商大道100号",
+  "email":"test@alibaba.com",
+  "marriage_enum":"未婚",
   "verify_code":"2345"
    }
 ```
