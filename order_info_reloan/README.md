@@ -61,7 +61,7 @@ income_information|收入信息|String|Y|
 identification_no |	身份证-身份证号|String| Y
 name|	身份证-姓名|String|Y|
 identification_address|	身份证-户籍地址|String|Y|
-valid_date	|身份证-有效期限|String |Y| 格式 2018.10.10-2038.10.10  或者 2018.10.10-长期
+valid_date	|身份证-有效期限|String |Y| 格式 2018.01.01-2038.10.10  或者 2018.10.10-长期(日期必须是YYYY.MM.DD)
 nation|	民族|String|Y|
 issue_group|	签发机关|String|Y|
 idcard_front|	身份证-正面照片|String|Y|图片的base64
