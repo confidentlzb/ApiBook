@@ -25,6 +25,12 @@ stage |审批期限 | Integer| Y| /
 term_unit |期限单位|  Integer| Y |1：天2：月
 loan_purpose | 贷款用途|  String|  N |
 bank_card| 卡号|  String|  Y| 卡号（完整卡号）
+income_information|收入信息|String|Y|
+company_name|	公司名称|String|Y|
+company_telephone|	公司电话|String|Y|
+company_address|	公司地址|String|Y|
+email|	邮箱|String|Y|
+marriage_enum|	婚姻状况|String|Y|已婚，未婚，其他
 verify_code| 验证码| String|  Y| 验证码
 
 ####4.1.2 请求示例

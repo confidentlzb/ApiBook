@@ -26,7 +26,7 @@ user_base_info | 用户基本信息| Objet|Y|
 identification_info|身份证信息|Object|Y|
 face_info|人脸信息|Object|Y|
 contact_info|通话记录信息|Object|Y|
-credict_card_info|信用卡信息|Object|Y|
+credict_card_info|信用卡信息|Object|N|
 location_info|定位信息|Object|Y|
 device_info|设备信息|Object|Y|
 third_info|第三方信息|String|N|芝麻信用数据（只给芝麻分）
@@ -41,17 +41,16 @@ identification_no|	身份证号|String|Y|
 mobile|	手机号码|String|Y|
 audit_mobile|	运营商手机号|String|Y|认证手机号
 education_enum|	用户学历|String|Y|初中及以下,中专,高中，大专，本科，硕士，博士
-email|	邮箱|String|Y|
-marriage_enum|	婚姻状况|String|Y|已婚，未婚，其他
-company_name|	公司名称|String|Y|
+marriage_enum|	婚姻状况|String|N|已婚，未婚，其他
+company_name|	公司名称|String|N|
 company_telephone|	公司电话|String|N|
 company_address|	公司地址|String|N|
 education_enum|	学历|String|Y|
 residence_address|家庭住址|String|Y|
 graduation_years|	毕业年限|Integer|N|
-email|邮箱|String|Y|
+email|邮箱|String|N|
 birth_day|	生日|String|Y|YYYYMMDD
-income_information|收入信息|String|Y|
+income_information|收入信息|String|N|
 
 
 **身份证信息**
@@ -61,7 +60,7 @@ income_information|收入信息|String|Y|
 identification_no |	身份证-身份证号|String| Y
 name|	身份证-姓名|String|Y|
 identification_address|	身份证-户籍地址|String|Y|
-valid_date	|身份证-有效期限|String |Y| 格式 2018.10.10-2038.10.10  或者 2018.10.10-长期
+valid_date	|身份证-有效期限|String |Y| 格式 2018.01.01-2038.10.10  或者 2018.10.10-长期(日期必须是YYYY.MM.DD)
 nation|	民族|String|Y|
 issue_group|	签发机关|String|Y|
 idcard_front|	身份证-正面照片|String|Y|图片的base64
@@ -73,7 +72,7 @@ idcard_back|	身份证-反面照片|String|Y|图片的base64
 ------------ | ------------- | ------------ | ------------ | ------------ 
 identify_score|	人脸识别-识别分数|Integer|Y|
 identify_result|	识别结果|String|Y|
-hack_score|	HACK评分|String|Y|
+hack_score|	HACK评分|String|N|
 face_photo|	人脸识别照片|String|Y|图片的base64数据
 **通话记录信息**
 
@@ -83,7 +82,7 @@ close_mobile|	亲密联系人电话|String|Y|
 close_name|	亲密联系人姓名|String|Y|
 common_mobile|一般联系人电话|String|Y|
 common_name|	一般联系人姓名|String|Y|
-contact_cnt|	通讯录个数|Integer|Y|
+contact_cnt|	通讯录个数|Integer|N|
 other_contact_list|其他联系人信息列表|List|N|保存name,mobile
 user_contact_list|用户通讯录信息|List|N|保存name,mobile
 operator|运营商数据|Object|N|直接传递运营商原始数据由还呗解析
